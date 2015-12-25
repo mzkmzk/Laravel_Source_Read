@@ -44,6 +44,13 @@
         }
         ?>
 
+##3. 个性化设定
+
+    php artisan vendor:publish
+
+会生产`config/excel.php`配置文件
+
+
 ##参考链接
 
 <http://laravelacademy.org/post/2024.html>
