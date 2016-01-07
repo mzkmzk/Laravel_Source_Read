@@ -28,7 +28,7 @@
     }
 ```
 
-2. create()方法时指定可设置属性/指定不可设置属性
+##2. create()方法时指定可设置属性/指定不可设置属性
 
 文档里也有说明
 
@@ -98,7 +98,7 @@ public function isFillable($key)
 }
 
 ```
-为了让我所以属性都可设置,我就在M配置了
+为了让我所以属性都可设置,我就在Model配置了
 
 ```php
 protected $guarded = [];
