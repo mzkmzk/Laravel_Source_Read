@@ -19,6 +19,7 @@
 ```php
  public static function create(array $attributes = [])
     {
+        //调用构造方法.
         $model = new static($attributes);
         
         $model->save();
