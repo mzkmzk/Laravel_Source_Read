@@ -98,4 +98,8 @@ public function isFillable($key)
 }
 
 ```
+为了让我所以属性都可设置,我就在M配置了
 
+```php
+protected $guarded = [];
+```
