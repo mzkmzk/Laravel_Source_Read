@@ -68,8 +68,13 @@ public function totallyGuarded()
     return count($this->fillable) == 0 && $this->guarded == ['*'];
 }
 ```
-这里注意设置了是否限定了全部不可访问,这样就只执行一次fill方法中的循环了.
+这里注意设置了是否限定了全部不可访问,这样就只执行一次fill方法中的循环了.为什么要执行一次了,因为好抛出哪个属性不可设置的异常.
 
+    MassAssignmentException in Model.php line 427:name
+
+再看看如何判断某一属性是否可设置
+
+```php
 public function isFillable($key)
 {
     if (static::$unguarded) {
@@ -92,8 +97,5 @@ public function isFillable($key)
     return empty($this->fillable) && ! Str::startsWith($key, '_');
 }
 
-
 ```
 
-MassAssignmentException in Model.php line 427:
-name
