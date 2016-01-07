@@ -63,10 +63,10 @@ public function fill(array $attributes)
 注意一下这个方法里首先访问了`totallyGuarded`方法
 
 ```php
-  public function totallyGuarded()
-    {
-        return count($this->fillable) == 0 && $this->guarded == ['*'];
-    }
+public function totallyGuarded()
+{
+    return count($this->fillable) == 0 && $this->guarded == ['*'];
+}
 ```
 
 public function isFillable($key)
