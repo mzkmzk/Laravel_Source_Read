@@ -27,3 +27,19 @@
         return $model;
     }
 ```
+
+2. create()方法时指定可设置属性/指定不可设置属性
+
+文档里也有说明
+
+在Model里可以设置
+
+1. `$fillable`数组放置可设置的属性
+2. `$guarded`数组里放置不可设置的属性
+
+```php
+
+```
+
+MassAssignmentException in Model.php line 427:
+name
