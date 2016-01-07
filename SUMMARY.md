@@ -5,5 +5,5 @@
    * [Mail](mail.md)
    * [Excel](excel.md)
    * [Eloquent](eloquent.md)
-       * error
+       * [error](error.md)
 
