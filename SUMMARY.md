@@ -4,4 +4,5 @@
 * [Use](use.md)
    * [Mail](mail.md)
    * [Excel](excel.md)
+   * Eloquent
 
