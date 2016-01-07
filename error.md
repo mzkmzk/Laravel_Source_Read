@@ -68,6 +68,7 @@ public function totallyGuarded()
     return count($this->fillable) == 0 && $this->guarded == ['*'];
 }
 ```
+这里注意设置了是否限定了全部不可访问,这样就只执行一次fill方法中的循环了.
 
 public function isFillable($key)
 {
