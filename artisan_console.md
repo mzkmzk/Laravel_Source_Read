@@ -31,3 +31,9 @@
     
     handle则为处理的函数
     
+3. 在`Kernel.php`载入类
+
+         protected $commands = [
+            ...
+            \App\Console\Commands\Send_Emails::class,
+        ];
