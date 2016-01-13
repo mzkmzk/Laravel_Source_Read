@@ -37,3 +37,6 @@
             ...
             \App\Console\Commands\Send_Emails::class,
         ];
+        
+    然后`php artisan list`就可以看到你的命令了
+    
