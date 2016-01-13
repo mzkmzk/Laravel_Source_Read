@@ -103,3 +103,28 @@ public function isFillable($key)
 ```php
 protected $guarded = [];
 ```
+
+##3. 如何在运行mysql自带函数
+
+在Eloquent中,你的where第一个参数会自动加上双引号,例如
+
+```php
+ Sample_Model::query()
+           ->where("TIMESTAMPDIFF(DAY,now(),projected_report_at)",'<=','15')
+           ->get())
+```
+
+输出的SQL是:
+
+    SQL: select * from `Samples` where `Samples`.`deleted_at` is null and `TIMESTAMPDIFF(DAY,now(),projected_report_at)` <= 15)
+
+在mysql函数外面加了双引号
+
+如何解决: `DB::raw(语句)`;
+
+```php
+    Sample_Model::query()
+           ->where(DB::raw("TIMESTAMPDIFF(DAY,now(),projected_report_at)"),'<=','15')
+           ->get()));
+```           
+
