@@ -24,7 +24,7 @@
 
         Mail::send('发送的vie', $data, function($message) use($data)
         {
-            $message->to('收件人@qq.com', '')->subject('欢迎注册我们的网站，请激活您的账号！');
+            `
         });
     
 
