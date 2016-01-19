@@ -21,7 +21,7 @@
 
 `Send_Emails`是我在步骤1总设置好的命令
 
-##3. 讲schedule配置提交到系统
+##3. 将schedule配置提交到系统
 
 输入命令`crontab -e` 然后编辑下列字符串.
 
