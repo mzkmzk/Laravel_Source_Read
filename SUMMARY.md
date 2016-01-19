@@ -2,10 +2,10 @@
 
 * [Introduction](README.md)
 * [Use](use.md)
-   * [Mail](mail.md)
-   * [Excel](excel.md)
    * [Eloquent](eloquent.md)
        * [error](error.md)
+   * [Mail](mail.md)
+   * [Excel](excel.md)
    * [Task_Scheduling](task.md)
    * [Artisan Console](artisan_console.md)
 
