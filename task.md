@@ -29,6 +29,8 @@
     
 大家注意我的php 和我项目的路径都是写着全路径,以免有环境变量问题
 
+``crontab -l` 可查看任务列表
+
 然后就基本OK了
 
 系统任务配置参考<http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/crontab.html>
