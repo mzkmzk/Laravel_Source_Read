@@ -26,7 +26,7 @@
     make
     make test
     
-    //启动服务器的
+    //启动服务器的 默认监听6379
     src/redis-server
     
     //启动客户端
