@@ -6,17 +6,27 @@
 
 ##2. 配置
 
-主要配置`config/mail.php`
+主要配置`.env`
 
-    'driver' => 'smtp',
-    'host' => 'smtp.qq.com',
-    'port' => 465,
-    'from' => ['address' => '2326382007@qq.com', 'name' => 'HapLab'],
-    'encryption' => 'ssl',
-    'username' => '麦哥@qq.com',
-    'password' => '***',//注意此密码不是账号密码,而是开启STMP后的密码
-    'sendmail' => '/usr/sbin/sendmail -bs',
-    'pretend' => false,
+普通QQ邮箱
+
+    MAIL_DRIVER=smtp
+    MAIL_HOST=smtp.qq.com
+    MAIL_NAME=HapLab
+    MAIL_PORT=465
+    MAIL_USERNAME=23263820@qq.com
+    MAIL_PASSWORD=lachsogxbfqae等特定密码
+    MAIL_ENCRYPTION=ssl
+
+企业qq邮箱
+
+    MAIL_DRIVER=smtp
+    MAIL_HOST=smtp.exmail.qq.com
+    MAIL_NAME=随便起一个名字
+    MAIL_PORT=465
+    MAIL_USERNAME=邮箱账号
+    MAIL_PASSWORD=明文密码
+    MAIL_ENCRYPTION=ssl
     
 ##3. 发送
 
