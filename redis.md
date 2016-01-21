@@ -4,6 +4,8 @@
 
 环境为Mac_10.10
 
+
+###1.1 安装Redis
 安装wget`brew install wget`
 
     ==> Summary
@@ -23,3 +25,6 @@
     cd redis-3.0.6
     make
     make test
+    
+    //启动
+    src/redis-server
