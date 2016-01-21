@@ -43,3 +43,5 @@
 Laravel官网<http://laravel.com/docs/5.1/mail>
 
 配置QQ邮箱<https://lvwenhan.com/laravel/436.html>
+
+配置企业QQ邮箱<http://service.exmail.qq.com/cgi-bin/help?id=28&no=1000585&subtype=1>
