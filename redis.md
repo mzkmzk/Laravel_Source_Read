@@ -26,5 +26,9 @@
     make
     make test
     
-    //启动
+    //启动服务器的
     src/redis-server
+    
+    //启动客户端
+    src/redis-cli
+    
