@@ -13,3 +13,10 @@
     ######################################################################## 100.0%
     ==> Pouring wget-1.16.1.yosemite.bottle.tar.gz
     🍺  /usr/local/Cellar/wget/1.16.1: 9 files, 940K
+    
+电脑安装redis
+
+    wget http://download.redis.io/releases/redis-3.0.6.tar.gz
+    $ tar xzf redis-3.0.6.tar.gz
+    $ cd redis-3.0.6
+    $ make
