@@ -12,4 +12,8 @@
     
     1. 继承`Illuminate\Support\ServiceProvider`
     2. boot()方法,
-    3. register()方法,只允许进行绑定处理.
+    3. register()方法,只允许进行绑定处理.如果容器没有依赖任何的接口,则没有必要把容器绑定到提供者当中.
+
+2. 绑定
+
+    
