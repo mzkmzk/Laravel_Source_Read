@@ -9,5 +9,6 @@
    * [Task_Scheduling](task.md)
    * [Artisan Console](artisan_console.md)
    * [Service_Container](servicecontainer.md)
+   * Service Providers
 * [Redis](redis.md)
 
