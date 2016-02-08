@@ -6,7 +6,8 @@
 
 创建一个Test:
 
-    
+    php artisan make:test UserTest
+
 规则:
 
 1. 测试的类名和文件名要以Test结尾.
