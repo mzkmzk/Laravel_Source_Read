@@ -4,11 +4,7 @@
 
 ##1. 基本使用
 
-创建一个Test:
-
-    php artisan make:test UserTest
-
-规则:
+测试文件名和方法的规则:
 
 1. 测试的类名和文件名要以Test结尾.
 2. 方法名要以test开头. 
