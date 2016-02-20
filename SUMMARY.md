@@ -10,6 +10,6 @@
    * [Artisan Console](artisan_console.md)
    * [Service Providers](service_providers.md)
    * [Service_Container](servicecontainer.md)
+   * [Redis](redis.md)
    * [Test](test.md)
-* [Redis](redis.md)
 
