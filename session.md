@@ -13,4 +13,8 @@
     
     然而在`Laravel`并没什么卵用.
     
+    Laravel在页面中设置SESSION
     
+    ```php
+    $_SESSION['views']=1;
+    ```
