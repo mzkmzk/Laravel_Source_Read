@@ -29,6 +29,6 @@
     ```php
     0="4"
     ```
-    就是说如果用数字作为key,它会忽略掉这个key,直接把`value`push到session数组中.这个value的key根据`base_ref`递增.
+    就是说如果用数字作为key,它会忽略掉这个key,直接把`value`push到session数组中.这个value的key根据`base_ref`递增
 3. 
     
