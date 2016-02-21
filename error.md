@@ -139,3 +139,9 @@ protected $guarded = [];
 ```
 
 例如我要找学生的所属班级`$this->class_`即可,但是如果我要给这个级联关系加搜索条件呢
+
+因为默认情况下Laravel会执行
+
+```sql
+select * from `class_s` where `class_s`.`deleted_at` is null and `class_s`.`id` = '1524' limit 1
+```
