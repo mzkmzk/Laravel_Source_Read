@@ -128,3 +128,5 @@ protected $guarded = [];
            ->get()));
 ```           
 
+##4. 关于Model的级联疑问
+
