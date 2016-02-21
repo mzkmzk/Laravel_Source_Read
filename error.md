@@ -132,4 +132,8 @@ protected $guarded = [];
 
 关于Model,经常需要定义级联关系
 
-例如
+```php
+   public function studentes(){
+        return $this->hasMany('App\Models\Student_Model','class_ID','id');
+    }
+```
