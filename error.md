@@ -133,8 +133,9 @@ protected $guarded = [];
 关于Model,经常需要定义级联关系
 
 ```php
-   public function studentes(){
-        return $this->hasMany('App\Models\Student_Model','class_ID','id');
+    public function class_(){
+        return $this->belongsTo('App\Models\Class_Model','class_ID','id');
     }
 ```
 
+例如我要找本班级下的所有学生`$this->students`即可,但是如果我要给这个级联关系加搜索条件呢
