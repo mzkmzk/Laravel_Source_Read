@@ -6,7 +6,6 @@
 
 ##1. 先设置好命令,看` Artisan Console`章节.
 
-
 ##2. Kernel设置命令周期
 
 在`app/Console/Console/Kernel.php`中设置
