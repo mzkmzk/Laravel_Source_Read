@@ -40,3 +40,8 @@
         
     然后`php artisan list`就可以看到你的命令了
     
+##问题
+
+##1. Command能直接调用shell吗
+
+因为`schedule`里是可以通过exec方法调用shell,但是我想把命令封装到Command中,囧么破.
