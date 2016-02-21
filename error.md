@@ -146,4 +146,4 @@ protected $guarded = [];
 select * from `class_s` where `class_s`.`deleted_at` is null and `class_s`.`id` = '1524' limit 1
 ```
 
-但是如果我要加搜索条件呢,怎么办?
+但是如果我要加搜索条件呢,例如已经被删除的这个class也要找出来,怎么办?
