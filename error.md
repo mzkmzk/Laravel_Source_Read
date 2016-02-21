@@ -137,3 +137,4 @@ protected $guarded = [];
         return $this->hasMany('App\Models\Student_Model','class_ID','id');
     }
 ```
+
