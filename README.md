@@ -1,4 +1,4 @@
-My Awesome Book
+Laravel玩法+源码
 =======
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+在线阅读地址<https://mzkmzk.gitbooks.io/laravel_source_read/content/>
