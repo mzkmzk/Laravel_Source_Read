@@ -38,8 +38,11 @@ from' => ['address' => null, 'name' => null]
 然而如果就这样发送邮箱会报错
 
 ```php
+Swift_TransportException in AbstractSmtpTransport.php line 162:
 Cannot send message without a sender address
 ```
+
+所以address设置发送人的邮箱,name设置发送人的姓名
 ##4. 发送
 
 ###4.1 基本发送
