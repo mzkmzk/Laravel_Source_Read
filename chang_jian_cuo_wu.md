@@ -11,3 +11,4 @@ Fatal error: Uncaught exception 'ReflectionException' with message 'Class log do
 
 ReflectionException: Class log does not exist in /Users/maizhikun/Learning/apache_sites/haplox-wechat/bootstrap/cache/compiled.php on line 1318
 ```
+
