@@ -12,3 +12,4 @@ Fatal error: Uncaught exception 'ReflectionException' with message 'Class log do
 ReflectionException: Class log does not exist in /Users/maizhikun/Learning/apache_sites/haplox-wechat/bootstrap/cache/compiled.php on line 1318
 ```
 
+当env中出现中文,无论执行任何的`artisan`都报错.不能存在中文.
