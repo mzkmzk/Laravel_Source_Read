@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Use](use.md)
+   * [Controller](controller.md)
    * [Eloquent](eloquent.md)
        * [error](error.md)
    * [Mail](mail.md)
@@ -13,5 +14,4 @@
    * [Redis](redis.md)
    * [Test](test.md)
    * [SESSION](session.md)
-   * [Controller](controller.md)
 
