@@ -50,7 +50,7 @@ Cannot send message without a sender address
 ```php
 $content = "邮件内容";
 $result["result"] = Mail::raw($content, function ($message){
-        $message->to("437292602@qq.com", '')->subject("病人登记");
+        $message->to("437292602@qq.com", '')->subject("邮件标题");
 });
 ```
     
