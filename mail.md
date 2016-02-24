@@ -28,9 +28,21 @@
     MAIL_PASSWORD=明文密码
     MAIL_ENCRYPTION=ssl
     
-##3. 发送
+##3. 设置发件人姓名和邮箱
 
-###3.1 基本发送
+在`config/mail.php`中,默认设置为
+
+```php
+from' => ['address' => null, 'name' => null]
+```
+然而如果就这样发送邮箱会报错
+
+```php
+Cannot send message without a sender address
+```
+##4. 发送
+
+###4.1 基本发送
 
         Mail::send('发送的vie', $data, function($message) use($data)
         {
