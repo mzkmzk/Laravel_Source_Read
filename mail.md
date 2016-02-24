@@ -47,10 +47,12 @@ Cannot send message without a sender address
 
 ###4.1 基本发送
 
-        Mail::send('发送的vie', $data, function($message) use($data)
-        {
-            `
-        });
+```php
+$content = "邮件内容";
+$result["result"] = Mail::raw($content, function ($message){
+        $message->to("437292602@qq.com", '')->subject("病人登记");
+});
+```
     
 
 ## 参考链接
