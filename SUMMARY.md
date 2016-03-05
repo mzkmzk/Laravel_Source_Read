@@ -14,6 +14,6 @@
    * [Redis](redis.md)
    * [Test](test.md)
    * [SESSION](session.md)
-   * Console
+   * [Console](console.md)
 * [常见错误](chang_jian_cuo_wu.md)
 
