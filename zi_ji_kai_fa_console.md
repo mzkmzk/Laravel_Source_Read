@@ -158,3 +158,19 @@ OK 目标明确了,我需要改造这个文件
 其中这里的"User_Controller"就是我的生成的class名字
 
 文中省略了一些一些基本的步骤,但是主要的问题已经说明了.
+
+##3. 改进传输Controller的名称
+
+在第二点钟说构造方法中传输原本的`name`参数
+
+但是发现了每个Command都会执行一个`fire`方法
+
+如果想传递在执行命令前操作什么只需在子类中覆盖`fire`方法
+
+```php
+    public function fire()
+    {
+        $this->addArgument("name",null,"","User_Model");
+        return parent::fire() ;
+    }
+```
