@@ -8,5 +8,5 @@
 
 我的做法是,既然`laravel`本身就有生成Controller的功能,我需要先做一个类似的功能,先copy到我的Commadns目录下,然后进行改造.
 
-
+默认的make:controller现在路径`项目/vendor/laravel/framework/src/Illuminate/Routing/Console/ControllerMakeCommand.php`
 
