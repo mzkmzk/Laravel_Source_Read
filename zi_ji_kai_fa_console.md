@@ -75,6 +75,27 @@ class ControllerMakeCommand extends GeneratorCommand
 }
 
 ```
-
 OK 目标明确了,我需要改造这个文件
 
+我遇到的主要问题有,父类`GeneratorCommand`中会默认通过`getArguments`获取参数,这个参数本来是用来获取生成Controller的名称的,但是因为我需要生成的Controller是多个的,是从代码中获取,而不是控制台.
+
+父类的获取参数方法,会要求name是必须的填写的.
+```php
+ protected function getArguments()
+    {
+        return [
+            ['name', InputArgument::REQUIRED, 'The name of the class'],
+        ];
+    }
+```
+
+而我的Console是不需name参数的所以,要在子类中覆盖父类的方法
+
+```php
+ protected function getArguments()
+    {
+        return [
+            //['name', InputArgument::REQUIRED, 'The name of the class'],
+        ];
+    }
+```
