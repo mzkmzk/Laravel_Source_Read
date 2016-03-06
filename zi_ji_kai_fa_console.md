@@ -16,42 +16,42 @@
 class ControllerMakeCommand extends GeneratorCommand
 {
     /**
-     * The console command name.
+     * 命令名称
      *
      * @var string
      */
     protected $name = 'make:controller';
 
     /**
-     * The console command description.
+     * 命令简介
      *
      * @var string
      */
-    protected $description = 'Create a new controller class';
+    protected $description = 'Create a new resource controller class';
 
     /**
-     * The type of class being generated.
+     * 说明是生成什么文件的,目前只研究出的作用是,当生成成功时,控制台显示`Controller created successfully`的作用
      *
      * @var string
      */
     protected $type = 'Controller';
 
     /**
-     * Get the stub file for the generator.
+     * 获取模板文件
      *
      * @return string
      */
     protected function getStub()
     {
-        if ($this->option('resource')) {
-            return __DIR__.'/stubs/controller.stub';
+        if ($this->option('plain')) {
+            return __DIR__.'/stubs/controller.plain.stub';
         }
 
-        return __DIR__.'/stubs/controller.plain.stub';
+        return __DIR__.'/stubs/controller.stub';
     }
 
     /**
-     * Get the default namespace for the class.
+     * 获取默认工作空间
      *
      * @param  string  $rootNamespace
      * @return string
@@ -62,30 +62,16 @@ class ControllerMakeCommand extends GeneratorCommand
     }
 
     /**
-     * Get the console command options.
+     * 设置参数,当声明了--plain 说明只要生成空的Controller,`InputOption::VALUE_NONE`代表这个参数可有可无.
      *
      * @return array
      */
     protected function getOptions()
     {
         return [
-            ['resource', null, InputOption::VALUE_NONE, 'Generate a resource controller class.'],
+            ['plain', null, InputOption::VALUE_NONE, 'Generate an empty controller class.'],
         ];
     }
-
-    /**
-     * Build the class with the given name.
-     *
-     * Remove the base controller import if we are already in base namespace.
-     *
-     * @param  string  $name
-     * @return string
-     */
-    protected function buildClass($name)
-    {
-        $namespace = $this->getNamespace($name);
-
-        return str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
-    }
 }
+
 ```
