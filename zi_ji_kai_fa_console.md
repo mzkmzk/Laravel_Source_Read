@@ -106,5 +106,28 @@ OK 目标明确了,我需要改造这个文件
 
 ###2. 如何传输Controller的名称呢?
 
-但是我们如何从代码中获取生成Controller的名称呢?构造方法
+但是我们如何从代码中获取生成Controller的名称呢?答案:构造方法
 
+通过观察到父类的父类`GeneratorCommand`有构造方法,
+
+然后父类的父类的父类`Command`有个传递参数的方法`addArgument`,代码如下
+
+```php
+/**
+     * Adds an argument.
+     *
+     * @param string $name        The argument name
+     * @param int    $mode        The argument mode: InputArgument::REQUIRED or InputArgument::OPTIONAL
+     * @param string $description A description text
+     * @param mixed  $default     The default value (for InputArgument::OPTIONAL mode only)
+     *
+     * @return Command The current instance
+     */
+    public function addArgument($name, $mode = null, $description = '', $default = null)
+    {
+        $this->definition->addArgument(new InputArgument($name, $mode, $description, $default));
+
+        return $this;
+    }
+
+```
