@@ -75,3 +75,6 @@ class ControllerMakeCommand extends GeneratorCommand
 }
 
 ```
+
+OK 目标明确了,我需要改造这个文件
+
