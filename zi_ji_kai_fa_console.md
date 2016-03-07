@@ -170,7 +170,7 @@ OK 目标明确了,我需要改造这个文件
 ```php
     public function fire()
     {
-        $this->addArgument("name",null,"","User_Model");
+        $this->addArgument("name",null,"","User_Controller");
         return parent::fire() ;
     }
 ```
