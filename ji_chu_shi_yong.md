@@ -19,22 +19,22 @@
      
      1. register()中声明
 
-          ```php
-          class ReleaseServiceProvider extends ServiceProvider
+      ```php
+      class ReleaseServiceProvider extends ServiceProvider
+      {
+          public function boot()
           {
-              public function boot()
-              {
-              }
-
-              public function register()
-              {
-                  $this->app->when('App\Http\Controllers\ActivityController')
-                      ->needs('App\Services\ReleasePre')
-                      ->give('App\Services\ReleasePre');
-              }
           }
 
-          ```
+          public function register()
+          {
+              $this->app->when('App\Http\Controllers\ActivityController')
+                  ->needs('App\Services\ReleasePre')
+                  ->give('App\Services\ReleasePre');
+          }
+      }
+
+      ```
 
 
 ## 参考链接
