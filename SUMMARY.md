@@ -15,7 +15,7 @@
    * [Test](test.md)
    * [SESSION](session.md)
    * [Route](route.md)
-   * IOC
+   * [IOC](ioc.md)
 * [Console](console.md)
    * [自己开发Console](zi_ji_kai_fa_console.md)
 * [常见错误](chang_jian_cuo_wu.md)
