@@ -65,9 +65,9 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 注意`__construct方法`也是每测试一个方法执行一次的.因为每个测试方法是不同的实例,如果想共享变量,请用`static`.
 
 
-##遇到的错误
+#遇到的错误
 
-1. 程序报错
+## 1.程序报错
 
 	1) User_Test::test_Insert
 	ErrorException: Invalid argument supplied for foreach()
@@ -80,7 +80,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
 	[参考](http://stackoverflow.com/questions/31921451/laravel-5-1-phpunit-api-test-returns-always-invalid-argument-error-foreach)	,
 
-2. 伪集合数组问题
+## 2.伪集合数组问题
 		
 		//代码
 		 $this->post('/Controller/User_Controller/insert', ['id' =>  $this::$id , 'username' => $this::$id])
@@ -95,7 +95,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 		
 	第一眼看上去以为是前面是数组里的属性,而后面是数组里对象的属性的原因....万万没想到..是因为true前后的双引号的原因..在测试类中去掉就好了	
 	
-3. 数组需要包含所有属性问题
+## 3.数组需要包含所有属性问题
 
 	问题是我需要检验一个对象中的部分属性,好像实现不了.我的代码
 	
@@ -110,4 +110,23 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 		//测试结果
 		1) User_Test::test_Query
 		Unable to find JSON fragment ["data":[{"username":"1137598_update"}]] within [{"current_page":1,"data":[{"created_at":"2015-10-29 18:57:13","deleted_at":"0000-00-00 00:00:00","email":"","id":1137598,"last_login_at":"0000-00-00 00:00:00","login_times":0,"name":"","phone":"","privilege":1,"status":0,"updated_at":"2015-10-29 18:57:13","username":"1137598_update"}],"from":1,"last_page":1,"next_page_url":null,"per_page":20,"prev_page_url":null,"to":1,"total":1}].
-		Failed asserting that false is true.	
+		Failed asserting that false is true.
+        
+## 4. 调用url错误
+
+执行代码
+```php
+$response = $this->call('POST','/auth/login',[
+            'email'=> '437292602@qq.com',
+            'password'=> '805547MZK',
+]);
+```
+
+错误代码
+
+```
+Fatal error: Call to a member function make() on null in /Users/maizhikun/Learning/apache_sites/grouplus_front/trunk/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php on line 447
+```
+
+解决方法
+需要在调用php代码前加`parent::setUp();`
