@@ -14,7 +14,7 @@
 
 
 来一发Demo.
-
+```php
 	<?php
 
 	use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -31,7 +31,7 @@
             	]);
     	}
 	}
-	
+```	
 一开始我是想在测试每个方法的时候输出一个语句表示测试到哪方法,但是没找到获取哪个类的哪个方法调用了测试方法的方法- -..所以只能输出在测试哪一个类..
 
 修改TestCase.php,增加了`error_log("正在测试: " . get_class($this));`这么一句,结果是执行了多少个测试方法就输出多少次类名...求教如何输出方法..
