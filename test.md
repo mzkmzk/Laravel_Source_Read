@@ -36,29 +36,29 @@
 
 修改TestCase.php,增加了`error_log("正在测试: " . get_class($this));`这么一句,结果是执行了多少个测试方法就输出多少次类名...求教如何输出方法..
 ```php
-	class TestCase extends Illuminate\Foundation\Testing\TestCase
-	{
-    	/**
-     	* The base URL to use while testing the application.
-     	*
-    	* @var string
-     	*/
-    	protected $baseUrl = 'http://localhost';
+class TestCase extends Illuminate\Foundation\Testing\TestCase
+{
+    /**
+    * The base URL to use while testing the application.
+    *
+    * @var string
+    */
+    protected $baseUrl = 'http://localhost';
 
-    	/**
-     	* Creates the application.
-     	*
-     	* @return \Illuminate\Foundation\Application
-     	*/
-    	public function createApplication()
-    	{
-        	$app = require __DIR__.'/../bootstrap/app.php';
-        	error_log("正在测试: " . get_class($this));
-        	$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+    /**
+    * Creates the application.
+    *
+    * @return \Illuminate\Foundation\Application
+    */
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
+        error_log("正在测试: " . get_class($this));
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
-        	return $app;
-    	}
-	}
+        return $app;
+    }
+}
 ```	
 额...对了重写setUp()方法会在每个测试方法之前都调用..和我们之前实现的效果一样.
 
