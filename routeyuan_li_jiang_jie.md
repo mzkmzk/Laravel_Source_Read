@@ -10,4 +10,9 @@
 Route::post('test','TestController@test');
 ```
 
-# 2. 
+# 2. 解析
+
+主要问题有
+
+1. Route::post里的调用的是哪里的方法
+2. 
