@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Use](use.md)
+   * [系统初始化流程](xi_tong_chu_shi_hua_liu_cheng.md)
    * [Controller](controller.md)
    * [Eloquent](eloquent.md)
        * [error](error.md)
@@ -18,7 +19,6 @@
        * [Route原理讲解](routeyuan_li_jiang_jie.md)
    * [IOC](ioc.md)
        * [基础使用](ji_chu_shi_yong.md)
-   * [系统初始化流程](xi_tong_chu_shi_hua_liu_cheng.md)
 * [Console](console.md)
    * [自己开发Console](zi_ji_kai_fa_console.md)
 * [常见错误](chang_jian_cuo_wu.md)
