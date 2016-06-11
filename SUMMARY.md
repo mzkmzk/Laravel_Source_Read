@@ -2,8 +2,8 @@
 
 * [Introduction](README.md)
 * [Use](use.md)
-   * [系统初始化流程](xi_tong_chu_shi_hua_liu_cheng.md)
    * [Controller](controller.md)
+   * [系统初始化流程](xi_tong_chu_shi_hua_liu_cheng.md)
    * [Eloquent](eloquent.md)
        * [error](error.md)
    * [Mail](mail.md)
