@@ -19,8 +19,9 @@
       ```php
        public function __construct($basePath = null)
     {
-        //
+        //注册最基本的容器
         $this->registerBaseBindings();
+        //
         $this->registerBaseServiceProviders();
         $this->registerCoreContainerAliases();
         if ($basePath) {
