@@ -21,8 +21,9 @@
     {
         //注册最基本的容器
         $this->registerBaseBindings();
-        //
+        //注释事件服务提供者和路由服务提供者
         $this->registerBaseServiceProviders();
+        
         $this->registerCoreContainerAliases();
         if ($basePath) {
             $this->setBasePath($basePath);
