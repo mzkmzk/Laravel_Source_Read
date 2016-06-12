@@ -13,4 +13,20 @@
         realpath(__DIR.'/../')
       )
       ```
+      
+      看看实例化的具体函数
+      
+      ```php
+       public function __construct($basePath = null)
+    {
+        //
+        $this->registerBaseBindings();
+        $this->registerBaseServiceProviders();
+        $this->registerCoreContainerAliases();
+        if ($basePath) {
+            $this->setBasePath($basePath);
+        }
+    }
+
+      ```
 
