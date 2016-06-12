@@ -25,6 +25,7 @@
         $this->registerBaseServiceProviders();
         //注册核心服务容器别名
         $this->registerCoreContainerAliases();
+        //绑定目录位置,app,base,config,database,lang,public,storage等
         if ($basePath) {
             $this->setBasePath($basePath);
         }
