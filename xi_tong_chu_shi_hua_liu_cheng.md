@@ -2,7 +2,7 @@
 
 # 总体
 
-1. 入口文件public/index.php
-
-  
+1. 入口文件`public/index.php`
+2. 加载`bootstrap/app.php`,主要内容为加载`composer`相关的php文件
+3. 
 
