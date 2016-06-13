@@ -31,3 +31,16 @@ Container主要实现这两个接口
 
 ## 1.2 alias: 设置接口别名
 
+```php
+    /**
+     * Alias a type to a different name.
+     *
+     * @param  string  $abstract
+     * @param  string  $alias
+     * @return void
+     */
+    public function alias($abstract, $alias)
+    {
+        $this->aliases[$alias] = $abstract;
+    }
+```
