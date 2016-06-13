@@ -10,7 +10,7 @@ class Container implements ArrayAccess, ContainerContract
 
 Container主要实现这两个接口
 
-首先分析`ContainerContract`接口需要实现何接口
+首先分析`ContainerContract`接口需要实现何方法
 
 ## 1.1  bound: 判断接口是否被绑定
 
@@ -101,3 +101,5 @@ Container主要实现这两个接口
         return $results;
     }
 ```
+
+## 1.5 bind: 
