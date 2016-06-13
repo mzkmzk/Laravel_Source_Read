@@ -115,7 +115,7 @@ Container主要实现这两个接口
      */
     public function bind($abstract, $concrete = null, $shared = false)
     {
-        //当接口为["接口名"=>"别名"]时这样绑定接口名和别名
+        //当接口为["接口名"=>"别名"]时这样绑定接口名和别名,这种情况docs无提及
         if (is_array($abstract)) {
             list($abstract, $alias) = $this->extractAlias($abstract);
 
