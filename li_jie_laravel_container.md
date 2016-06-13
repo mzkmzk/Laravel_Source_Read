@@ -77,3 +77,27 @@ Container主要实现这两个接口
 
 函数的作用给每个接口都分配在指定的tag中
 
+## 1.4 tagged: 制造tag下的所有接口
+
+实现:
+
+```php
+    /**
+     * Resolve all of the bindings for a given tag.
+     *
+     * @param  string  $tag
+     * @return array
+     */
+    public function tagged($tag)
+    {
+        $results = [];
+
+        if (isset($this->tags[$tag])) {
+            foreach ($this->tags[$tag] as $abstract) {
+                $results[] = $this->make($abstract);
+            }
+        }
+
+        return $results;
+    }
+```
