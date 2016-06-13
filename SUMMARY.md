@@ -12,7 +12,7 @@
    * [Artisan Console](artisan_console.md)
    * [Service Providers](service_providers.md)
    * [Service_Container](servicecontainer.md)
-       * 理解Laravel Container
+       * [理解Laravel Container](li_jie_laravel_container.md)
    * [Redis](redis.md)
    * [Test](test.md)
    * [SESSION](session.md)
