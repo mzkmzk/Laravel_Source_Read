@@ -104,6 +104,8 @@ Container主要实现这两个接口
 
 ## 1.5 bind: 注册接口道容器中
 
+实现
+
 ```php
     /**
      * Register a binding with the container.
@@ -122,18 +124,15 @@ Container主要实现这两个接口
             $this->alias($abstract, $alias);
         }
 
-        // If no concrete type was given, we will simply set the concrete type to the
-        // abstract type. This will allow concrete type to be registered as shared
-        // without being forced to state their classes in both of the parameter.
+        //删除接口当前绑定的instances和aliases
         $this->dropStaleInstances($abstract);
 
+        //当没有具体的实例,则使用接口为实体
         if (is_null($concrete)) {
             $concrete = $abstract;
         }
 
-        // If the factory is not a Closure, it means it is just a class name which is
-        // bound into this container to the abstract type and we will just wrap it
-        // up inside its own Closure to give us more convenience when extending.
+        //当实体为闭包时(实际大多数情况如此),
         if (! $concrete instanceof Closure) {
             $concrete = $this->getClosure($abstract, $concrete);
         }
@@ -147,4 +146,18 @@ Container主要实现这两个接口
             $this->rebound($abstract);
         }
     }
+```
+
+`$this->getClosure`的实现需要注意一下
+
+
+```php
+protected function getClosure($abstract, $concrete)
+{
+    return function ($c, $parameters = []) use ($abstract, $concrete) {
+        $method = ($abstract == $concrete) ? 'build' : 'make';
+
+        return $c->$method($concrete, $parameters);
+    };
+}
 ```
