@@ -12,9 +12,9 @@ Container主要实现这两个接口
 
 首先分析`ContainerContract`接口需要实现何接口
 
-## 1.1  bound($abstract): 判断接口是否被绑定
+## 1.1  bound: 判断接口是否被绑定
 
-实现::
+实现:
 
 ```php
     /**
@@ -28,3 +28,6 @@ Container主要实现这两个接口
         return isset($this->bindings[$abstract]) || isset($this->instances[$abstract]) || $this->isAlias($abstract);
     }
 ```
+
+## 1.2 alias: 设置接口别名
+
