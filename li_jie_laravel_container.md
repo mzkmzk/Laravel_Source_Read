@@ -104,3 +104,47 @@ Container主要实现这两个接口
 
 ## 1.5 bind: 注册接口道容器中
 
+```php
+    /**
+     * Register a binding with the container.
+     *
+     * @param  string|array  $abstract
+     * @param  \Closure|string|null  $concrete
+     * @param  bool  $shared
+     * @return void
+     */
+    public function bind($abstract, $concrete = null, $shared = false)
+    {
+        //当接口为["接口名"=>"别名"]时这样绑定接口名和别名
+        if (is_array($abstract)) {
+            list($abstract, $alias) = $this->extractAlias($abstract);
+
+            $this->alias($abstract, $alias);
+        }
+
+        // If no concrete type was given, we will simply set the concrete type to the
+        // abstract type. This will allow concrete type to be registered as shared
+        // without being forced to state their classes in both of the parameter.
+        $this->dropStaleInstances($abstract);
+
+        if (is_null($concrete)) {
+            $concrete = $abstract;
+        }
+
+        // If the factory is not a Closure, it means it is just a class name which is
+        // bound into this container to the abstract type and we will just wrap it
+        // up inside its own Closure to give us more convenience when extending.
+        if (! $concrete instanceof Closure) {
+            $concrete = $this->getClosure($abstract, $concrete);
+        }
+
+        $this->bindings[$abstract] = compact('concrete', 'shared');
+
+        // If the abstract type was already resolved in this container we'll fire the
+        // rebound listener so that any objects which have already gotten resolved
+        // can have their copy of the object updated via the listener callbacks.
+        if ($this->resolved($abstract)) {
+            $this->rebound($abstract);
+        }
+    }
+```
