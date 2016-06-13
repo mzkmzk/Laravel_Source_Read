@@ -14,3 +14,17 @@ Container主要实现这两个接口
 
 ## 1.1  bound($abstract): 判断接口是否被绑定
 
+实现::
+
+```php
+    /**
+     * Determine if the given abstract type has been bound.
+     *
+     * @param  string  $abstract
+     * @return bool
+     */
+    public function bound($abstract)
+    {
+        return isset($this->bindings[$abstract]) || isset($this->instances[$abstract]) || $this->isAlias($abstract);
+    }
+```
