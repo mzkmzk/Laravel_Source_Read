@@ -12,4 +12,5 @@ Container主要实现这两个接口
 
 首先分析`ContainerContract`接口需要实现何接口
 
-1. `bound($abstract)`: 
+## 1.1  bound($abstract): 判断接口是否被绑定
+
