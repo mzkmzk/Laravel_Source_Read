@@ -224,34 +224,32 @@ protected function getClosure($abstract, $concrete)
 
 ```php
 /**
-     * Register an existing instance as shared in the container.
-     *
-     * @param  string  $abstract
-     * @param  mixed   $instance
-     * @return void
-     */
-    public function instance($abstract, $instance)
-    {
-        // First, we will extract the alias from the abstract if it is an array so we
-        // are using the correct name when binding the type. If we get an alias it
-        // will be registered with the container so we can resolve it out later.
-        if (is_array($abstract)) {
-            list($abstract, $alias) = $this->extractAlias($abstract);
+   * Register an existing instance as shared in the container.
+   *
+   * @param  string  $abstract
+   * @param  mixed   $instance
+   * @return void
+   */
+  public function instance($abstract, $instance)
+  {
+     //先抽绑定接口=>别名,然后把无别名的接口去除掉
+      if (is_array($abstract)) {
+          list($abstract, $alias) = $this->extractAlias($abstract);
 
-            $this->alias($abstract, $alias);
-        }
+          $this->alias($abstract, $alias);
+      }
 
-        unset($this->aliases[$abstract]);
+      unset($this->aliases[$abstract]);
 
-        // We'll check to determine if this type has been bound before, and if it has
-        // we will fire the rebound callbacks registered with the container and it
-        // can be updated with consuming classes that have gotten resolved here.
-        $bound = $this->bound($abstract);
+      // We'll check to determine if this type has been bound before, and if it has
+      // we will fire the rebound callbacks registered with the container and it
+      // can be updated with consuming classes that have gotten resolved here.
+      $bound = $this->bound($abstract);
 
-        $this->instances[$abstract] = $instance;
+      $this->instances[$abstract] = $instance;
 
-        if ($bound) {
-            $this->rebound($abstract);
-        }
-    }
+      if ($bound) {
+          $this->rebound($abstract);
+      }
+  }
 ```
