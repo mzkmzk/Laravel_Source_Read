@@ -241,7 +241,7 @@ protected function getClosure($abstract, $concrete)
 
       unset($this->aliases[$abstract]);
 
-      
+      //如果发生并发绑定,则重新装载
       $bound = $this->bound($abstract);
 
       $this->instances[$abstract] = $instance;
