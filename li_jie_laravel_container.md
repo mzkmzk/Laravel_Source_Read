@@ -266,3 +266,6 @@ protected function getClosure($abstract, $concrete)
         return new ContextualBindingBuilder($this, $concrete);
     }
 ```
+
+## 1.11 make: 制作一个类型从容器中
+
