@@ -251,3 +251,18 @@ protected function getClosure($abstract, $concrete)
       }
   }
 ```
+
+## 1.10 when: 指定绑定环境
+
+```php
+    /**
+     * Define a contextual binding.
+     *
+     * @param  string  $concrete
+     * @return \Illuminate\Contracts\Container\ContextualBindingBuilder
+     */
+    public function when($concrete)
+    {
+        return new ContextualBindingBuilder($this, $concrete);
+    }
+```
