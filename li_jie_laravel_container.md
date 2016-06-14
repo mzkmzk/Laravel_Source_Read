@@ -137,6 +137,7 @@ Container主要实现这两个接口
             $concrete = $this->getClosure($abstract, $concrete);
         }
 
+        //绑定接口
         $this->bindings[$abstract] = compact('concrete', 'shared');
 
         // If the abstract type was already resolved in this container we'll fire the
