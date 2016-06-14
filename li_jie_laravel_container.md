@@ -196,3 +196,4 @@ protected function getClosure($abstract, $concrete)
     }
 ```
 
+## 1.8 extend: 
