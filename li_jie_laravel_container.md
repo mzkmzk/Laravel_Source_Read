@@ -160,3 +160,6 @@ protected function getClosure($abstract, $concrete)
     };
 }
 ```
+
+## 1.6 bindIf: 如果绑定了重新绑定
+
