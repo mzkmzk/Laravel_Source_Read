@@ -179,3 +179,20 @@ protected function getClosure($abstract, $concrete)
         }
     }
 ```
+
+## 1.7 singleton: 绑定共享单例
+
+```php
+    /**
+     * Register a shared binding in the container.
+     *
+     * @param  string|array  $abstract
+     * @param  \Closure|string|null  $concrete
+     * @return void
+     */
+    public function singleton($abstract, $concrete = null)
+    {
+        $this->bind($abstract, $concrete, true);
+    }
+```
+
