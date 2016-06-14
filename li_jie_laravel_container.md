@@ -196,4 +196,26 @@ protected function getClosure($abstract, $concrete)
     }
 ```
 
-## 1.8 extend: 
+## 1.8 extend: 拓展接口
+
+```php
+    /**
+     * "Extend" an abstract type in the container.
+     *
+     * @param  string    $abstract
+     * @param  \Closure  $closure
+     * @return void
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function extend($abstract, Closure $closure)
+    {
+        if (isset($this->instances[$abstract])) {
+            $this->instances[$abstract] = $closure($this->instances[$abstract], $this);
+
+            $this->rebound($abstract);
+        } else {
+            $this->extenders[$abstract][] = $closure;
+        }
+    }
+```
