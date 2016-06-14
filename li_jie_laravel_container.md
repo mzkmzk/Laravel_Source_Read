@@ -163,3 +163,19 @@ protected function getClosure($abstract, $concrete)
 
 ## 1.6 bindIf: 如果绑定了重新绑定
 
+```php
+    /**
+     * Register a binding if it hasn't already been registered.
+     *
+     * @param  string  $abstract
+     * @param  \Closure|string|null  $concrete
+     * @param  bool  $shared
+     * @return void
+     */
+    public function bindIf($abstract, $concrete = null, $shared = false)
+    {
+        if (! $this->bound($abstract)) {
+            $this->bind($abstract, $concrete, $shared);
+        }
+    }
+```
