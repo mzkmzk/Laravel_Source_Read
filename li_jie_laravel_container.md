@@ -140,9 +140,7 @@ Container主要实现这两个接口
         //绑定接口
         $this->bindings[$abstract] = compact('concrete', 'shared');
 
-        // If the abstract type was already resolved in this container we'll fire the
-        // rebound listener so that any objects which have already gotten resolved
-        // can have their copy of the object updated via the listener callbacks.
+        //若接口已绑定,则重新装载
         if ($this->resolved($abstract)) {
             $this->rebound($abstract);
         }
