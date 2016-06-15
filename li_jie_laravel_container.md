@@ -288,9 +288,7 @@ protected function getClosure($abstract, $concrete)
 
         $concrete = $this->getConcrete($abstract);
 
-        // We're ready to instantiate an instance of the concrete type registered for
-        // the binding. This will instantiate the types, as well as resolve any of
-        // its "nested" dependencies recursively until all have gotten resolved.
+       //递归的去创建实例的依赖
         if ($this->isBuildable($concrete, $abstract)) {
             $object = $this->build($concrete, $parameters);
         } else {
