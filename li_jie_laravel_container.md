@@ -295,9 +295,7 @@ protected function getClosure($abstract, $concrete)
             $object = $this->make($concrete, $parameters);
         }
 
-        // If we defined any extenders for this type, we'll need to spin through them
-        // and apply them to the object being built. This allows for the extension
-        // of services, such as changing configuration or decorating the object.
+        //填充拓展
         foreach ($this->getExtenders($abstract) as $extender) {
             $object = $extender($object, $this);
         }
